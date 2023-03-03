@@ -1,9 +1,11 @@
-import { connect } from "mongoose";
+import mongoose from "mongoose";
 const DB_URI = `${process.env.DB_URI}`;
 
 const dbInit = async () => {
-  await connect(DB_URI);
-  console.log("Estamos ready?");
+  mongoose.set("strictQuery", false);
+  mongoose.connect(DB_URI, () => {
+    console.log("Connected to MongoDB");
+  });
 };
 
 export default dbInit;
