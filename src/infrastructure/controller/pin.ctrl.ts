@@ -12,4 +12,7 @@ export class PinController {
     const pin = await this.pinUseCase.createPin(body);
     res.send({ pin });
   }
+  public async getAllCtrl({ body }: Request, res: Response) {
+    const pinAll = await this.pinUseCase.getAllPin();
+  }
 }

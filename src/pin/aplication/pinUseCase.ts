@@ -29,4 +29,8 @@ export class PinUseCase {
     const pin = await this.pinRepository.findPinById(uuid);
     return pin;
   }
+
+  public async getAllPin(){
+    const pinAll = await this.pinRepository.findPinAlll();
+  }
 }
